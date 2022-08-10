@@ -19,7 +19,7 @@ jobs:
 
       # https://github.com/akhilmhdh/contributors-readme-action
       - name: Update the list of contributors in the README file
-        uses: akhilmhdh/contributors-readme-action@v2.3.4
+        uses: akhilmhdh/contributors-readme-action@v2.3.6
         id: update_contributors
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
