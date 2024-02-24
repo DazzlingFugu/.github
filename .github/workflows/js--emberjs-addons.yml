@@ -108,7 +108,7 @@ jobs:
           elif [ "${{ inputs.package-manager }}" = "yarn" ]; then
             yarn install --no-lockfile --non-interactive
           elif [ "${{ inputs.package-manager }}" = "pnpm" ]; then
-            pnpm install --no-lockfile 
+            pnpm install --no-lockfile
           else
             echo "Unsupported package manager: ${{ inputs.package-manager }}"
             exit 1
