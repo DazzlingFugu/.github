@@ -33,6 +33,12 @@ on:
         required: false
         type: string
 
+      should-lint-lockfile:
+        description: If the job to lint lockfile should run or not.
+        default: true
+        required: false
+        type: boolean
+
 jobs:
   lint-tests:
     name: Lint and tests
@@ -50,6 +56,7 @@ jobs:
 
       # https://github.com/lirantal/lockfile-lint
       - name: Lint lockfile
+        if: ${{ inputs.should-lint-lockfile }}
         run: |
           if [ "${{ inputs.package-manager }}" = "npm" ]; then
             npx lockfile-lint --path package-lock.json --allowed-hosts npm yarn --validate-https
